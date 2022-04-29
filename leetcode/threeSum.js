@@ -4,45 +4,40 @@ const { log } = tool
 
 
 var threeSum = function(nums) {
-  if(!nums || nums.length<3) return []
-  let baseIndex= 0, result = []
-  // 排序，方便循环时候去重
+  if(nums.length<3) return []
+  const result = []
   nums.sort((a,b)=>a-b)
-  while(nums[baseIndex]<=0 && baseIndex<=nums.length-3){
-    // baseIndex去重
-    while(baseIndex >0 && nums[baseIndex] === nums[baseIndex-1]) {
-      baseIndex++
+  log('nums:',nums)
+  for(let base =0;base<nums.length-2; base++){
+    if(nums[base]>0) return result
+    while(base>0 && nums[base]===nums[base-1]){
+      base++
     }
-    // 左右指针
-    let i = baseIndex+1, j = nums.length-1
-    while(i<j){
-      const sum = nums[baseIndex]+nums[i]+nums[j]
+    let left = base+1, right = nums.length-1
+    while(left<right){
+      const sum = nums[base]+nums[left]+nums[right]
       if(sum === 0){
-        // 记录解并去重
-        result.push([nums[baseIndex],nums[i],nums[j]])
-        while(nums[i]===nums[i+1]){
-          i++
+        result.push([nums[base],nums[left],nums[right]])
+        while(nums[left]===nums[left+1]){
+          left++
         }
-        while(nums[j]===nums[j-1]){
-          j--
+        while(nums[right]===nums[right-1]){
+          right--
         }
-        i++
-        j--
-      // 通过题设条件剔除范围，双指针简化为一次循环
-      }else if(sum<0){
-        i++
+        left++
+        right--
+      }else if(sum < 0){
+        left++
       }else{
-        j--
-      } 
-
+        right--
+      }
     }
-    baseIndex++
   }
   return result
 };
 
 
-const input = [-2,0,0,2,2]
+const input = [-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6]
 
 log(threeSum(input))
 
