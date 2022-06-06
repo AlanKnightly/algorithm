@@ -1,3 +1,6 @@
+/**
+ * || Object.create()
+ */
 const create = (p)=>{
   function EmptyConstruct(){
   }
