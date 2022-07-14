@@ -1,4 +1,4 @@
-
+// 最近共同祖先
 const LCA = (root,p,q)=>{
   if([null, p,q].includes(root)) return root
   

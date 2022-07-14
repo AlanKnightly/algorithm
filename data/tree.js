@@ -1,11 +1,11 @@
 // 前中后序
+const operation = (node) =>console.log(node.value) 
 const traversal = (root) =>{
- if(root){
-   console.log(root.val)
-   if(root.left) traversal(root.left)
-   if(root.right) traversal(root.right)
- }
- return null
+  if(root){
+    operation(root)
+    if(root.left) traversal(root.left)
+    if(root.right) traversal(root.right) 
+  }
 }
 
 
