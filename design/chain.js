@@ -25,7 +25,7 @@ app.use(function (req, next) {
     next()
 })
 app.use(function (req, next) {
-    console.log('2', req)
+    console.log('22', req)
     next()
 })
 app.use(function (req, next) {
