@@ -21,7 +21,7 @@ class App {
 
 const app = new App()
 app.use(function (req, next) {
-    console.log('1', req)
+    console.log('11', req)
     next()
 })
 app.use(function (req, next) {

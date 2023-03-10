@@ -12,6 +12,5 @@ class MyLRU {
   get(key){
     return this.cache.get(key) || -1
   }
-  
 
 }
