@@ -29,7 +29,7 @@ app.use(function (req, next) {
     next()
 })
 app.use(function (req, next) {
-    console.log('32', req)
+    console.log('3222', req)
     next()
 })
 
