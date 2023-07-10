@@ -1,4 +1,9 @@
-// 插入排序：O(n2)
+/** 
+ * 插入排序：O(n2)
+ * 将待排序序列第一个元素作为有序数组，将后面每一个待排序元素
+ * 从后向前依次遍历，将待插入元素插入到适当位置
+ * */ 
+
 const insertSort = (arr)=>{
   for(let i=1;i<arr.length;i++){
     let preIndex = i-1 , current = arr[i]
